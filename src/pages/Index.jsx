@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Button, Container, Heading, SimpleGrid, Text, VStack, Image, useToast, Input, FormControl, FormLabel, IconButton } from "@chakra-ui/react";
+import { Box, Button, Container, Heading, SimpleGrid, Text, VStack, Image, useToast, Input, FormControl, FormLabel } from "@chakra-ui/react";
+import { Link } from "react-router-dom"; // Import the Link component
 import { FaTicketAlt, FaUserCog, FaShoppingCart, FaPlus } from "react-icons/fa";
 
 const Index = () => {
@@ -34,9 +35,9 @@ const Index = () => {
         <Image src="https://images.unsplash.com/photo-1627139853402-a730095065fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxvbHltcGljc3xlbnwwfHx8fDE3MDg4MDc2NDl8MA&ixlib=rb-4.0.3&q=80&w=1080" borderRadius="md" />
         <Text fontSize="lg">Welcome to the official ticket reservation system for the Paris 2024 Olympic Games. Experience the thrill of the games and be a part of history!</Text>
 
-        <Heading as="h2" size="lg">
-          Ticket Offers
-        </Heading>
+        <Button as={Link} to="/offers" colorScheme="blue" size="lg" my={6}>
+          View Ticket Offers
+        </Button>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           {["Solo", "Duo", "Familiale"].map((offer) => (
             <Box key={offer} p={5} shadow="md" borderWidth="1px">
